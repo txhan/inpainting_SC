@@ -4,28 +4,28 @@
   <meta charset="utf-8">
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="DESCRIPTION META TAG">
-  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
-  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
-  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <meta name="description" content=" We are the first to employ inpainting for semantic communication, selecting the most important parts of an image for transmission.We use a diffusion model to reconstruct high-quality images at the receiving end. This results in superior human-perceived image quality compared to other methods.">
+  <meta property="og:title" content="Inpainting Based Highly Efficient Semantic Communication Approach"/>
+  <meta property="og:description" content="We are the first to employ inpainting for semantic communication, selecting the most important parts of an image for transmission.We use a diffusion model to reconstruct high-quality images at the receiving end. This results in superior human-perceived image quality compared to other methods."/>
+  <meta property="og:url" content="txhan.github.io/inpainting_SC"/>
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image" content="static/image/your_og_banner_image.png" />
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
 
 
-  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
-  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <meta name="twitter:title" content="Inpainting Based Highly Efficient Semantic Communication Approach">
+  <meta name="twitter:description" content="We are the first to employ inpainting for semantic communication, selecting the most important parts of an image for transmission.We use a diffusion model to reconstruct high-quality images at the receiving end. This results in superior human-perceived image quality compared to other methods.">
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
   <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
   <meta name="twitter:card" content="summary_large_image">
   <!-- Keywords for your paper to be indexed by-->
-  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="keywords" content="Semantic communication, Generative model, Image transmission">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Academic Project Page</title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <title>Inpainting Based Highly Efficient Semantic Communication Approach</title>
+  <link rel="icon" type="image/x-icon" href="static/images/fa.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
 
@@ -43,6 +43,65 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+
+   <script>
+      function imageZoom(imgID, resultID) {
+        var img, lens, result, cx, cy;
+        img = document.getElementById(imgID);
+        result = document.getElementById(resultID);
+        /* Create lens: */
+        lens = document.createElement("DIV");
+        lens.setAttribute("class", "img-zoom-lens");
+        /* Insert lens: */
+        img.parentElement.insertBefore(lens, img);
+        /* Calculate the ratio between result DIV and lens: */
+        cx = result.offsetWidth / lens.offsetWidth;
+        cy = result.offsetHeight / lens.offsetHeight;
+        /* Set background properties for the result DIV */
+        result.style.backgroundImage = "url('" + img.src + "')";
+        result.style.backgroundSize = (img.width * cx) + "px " + (img.height * cy) + "px";
+        /* Execute a function when someone moves the cursor over the image, or the lens: */
+        lens.addEventListener("mousemove", moveLens);
+        img.addEventListener("mousemove", moveLens);
+        /* And also for touch screens: */
+        lens.addEventListener("touchmove", moveLens);
+        img.addEventListener("touchmove", moveLens);
+        function moveLens(e) {
+          var pos, x, y;
+          /* Prevent any other actions that may occur when moving over the image */
+          e.preventDefault();
+          /* Get the cursor's x and y positions: */
+          pos = getCursorPos(e);
+          /* Calculate the position of the lens: */
+          x = pos.x - (lens.offsetWidth / 2);
+          y = pos.y - (lens.offsetHeight / 2);
+          /* Prevent the lens from being positioned outside the image: */
+          if (x > img.width - lens.offsetWidth) {x = img.width - lens.offsetWidth;}
+          if (x < 0) {x = 0;}
+          if (y > img.height - lens.offsetHeight) {y = img.height - lens.offsetHeight;}
+          if (y < 0) {y = 0;}
+          /* Set the position of the lens: */
+          lens.style.left = x + "px";
+          lens.style.top = y + "px";
+          /* Display what the lens "sees": */
+          result.style.backgroundPosition = "-" + (x * cx) + "px -" + (y * cy) + "px";
+        }
+        function getCursorPos(e) {
+          var a, x = 0, y = 0;
+          e = e || window.event;
+          /* Get the x and y positions of the image: */
+          a = img.getBoundingClientRect();
+          /* Calculate the cursor's x and y coordinates, relative to the image: */
+          x = e.pageX - a.left;
+          y = e.pageY - a.top;
+          /* Consider any page scrolling: */
+          x = x - window.pageXOffset;
+          y = y - window.pageYOffset;
+          return {x : x, y : y};
+        }
+      }
+    </script>
+  
 </head>
 <body>
 
@@ -52,21 +111,22 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">Inpainting Based Highly Efficient Semantic Communication Approach</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
+                <a href="https://scholar.google.com/citations?user=64S_qiAAAAAJ" target="_blank">Tianxiao Han</a>
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
+                  <a href="https://scholar.google.com/citations?user=a2WEREUAAAAJ&hl=en" target="_blank">Qianqian Yang</a><sup>
                   <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
+                    <a href="https://scholar.google.com/citations?user=MbmKROkAAAAJ&hl=en" target="_blank">Deniz Gunduz</a>
+                  <span class="author-block">
+                    <a href="https://scholar.google.com/citations?user=7l8wsYgAAAAJ&hl=en&" target="_blank">Shi Zhiguo</a>
                   </span>
                   </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                    <span class="author-block">Zhejiang University<br>Conferance name and year</span>
                   </div>
 
                   <div class="column has-text-centered">
@@ -82,28 +142,8 @@
                       </a>
                     </span>
 
-                    <!-- Supplementary PDF link -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
 
-                  <!-- Github link -->
-                  <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-
+          
                 <!-- ArXiv abstract Link -->
                 <span class="link-block">
                   <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
@@ -129,11 +169,14 @@
     <div class="hero-body">
       <video poster="" id="tree" autoplay controls muted loop height="100%">
         <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
+        <source src="static/videos/"
         type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+        Our main contributions are threefold: <br>
+(i) We are the first to employ inpainting for semantic communication, selecting the most important parts of an image for transmission. This maintains a good balance between image quality and communication overhead.<br>
+(ii) We use a diffusion model to reconstruct high-quality images at the receiving end. This results in superior human-perceived image quality compared to other methods.<br>
+(iii) Our system exhibits robust performance under noisy conditions and can adapt to different types of images, which will help in further improving the model and reducing bias.
       </h2>
     </div>
   </div>
@@ -148,7 +191,10 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+This paper introduces an innovative approach to the semantic transmission of visual data over wireless networks, leveraging image inpainting to restore missing or distorted regions. At the transmitter, we utilize a novel pixel selection technique to detect and send semantically significant characteristics, increasing communication efficiency without compromising the quality of the image. At the receiver, we employ a blend of rapid inpainting methods with diffusion models (DDPM) to achieve high-definition image reconstruction. This combination results in outclassing traditional methods like Deep JSCC, particularly in terms of objective image quality and transmission efficiency. Against our previous generative method, while there is a slight decrease in data transmission, there are considerable improvements in objective evaluation metrics and a slight enhancement in the subjective ones. Notably, our approach obviates the need for predefined semantic segmentation models through the incorporation of traditional inpainting methods, thereby offering exceptional versatility across a wide array of applications. Moreover, the system exhibits robust performance even under high-noise environments. 
+          </p>
+          <p>
+             <img src="static/images/aresults.png" alt="Additional Results" class="center-image blend-img-background"/>
           </p>
         </div>
       </div>
@@ -157,121 +203,39 @@
 </section>
 <!-- End paper abstract -->
 
-
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
+<section class="section hero is-light">
+  <div class="container is-full is-max-desktop">
+    <div class="content ">
+      <h2 class="title is-3">Abalation Study</h2>
+      <div class="level-set has-text-justified">
+        <p>
+          In our ablation studies, we compare our results with those obtained when pixels are randomly selected at the transmitter for reconstruction. We can see a clear texture structure of our pixel selection result, while the random selection lose some semantic information.
+        </p>
+        <h2 class="has-text-centered">
+          <emph>Move your mouse over the image to zoom</emph>
         </h2>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
     </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
-
-
-
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
+    <p>
       <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <div class="column is-11">
+          <div class="img-zoom-container">
+            <img src="static/images/abalation.png" alt="abalation study" class="center-image blend-img-background" id="myimage"/> 
+
           </div>
         </div>
+        <div class="column is-1">
+          <div id="myresult" class="center-image img-zoom-result"></div>
+        </div>
       </div>
-    </div>
+      <script>
+        imageZoom("myimage", "myresult");
+      </script>
+    </p>
   </div>
 </section>
-<!-- End youtube video -->
 
-
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
-
-
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
-<!--End paper poster -->
+                    
 
 
 <!--BibTex citation -->
