@@ -45,7 +45,8 @@
   <script src="static/js/index.js"></script>
   <script src="https://unpkg.com/js-image-zoom/js-image-zoom.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/js-image-zoom/js-image-zoom.min.js"></script>
-  
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
    <script>
       function imageZoom(imgID, resultID) {
         var img, lens, result, cx, cy;
@@ -225,7 +226,6 @@ This paper introduces an innovative approach to the semantic transmission of vis
           <div id="myresult" class="center-image img-zoom-result"></div>
         </div>
       </div>
-    </div>
       <script>
         imageZoom("myimage", "myresult");
       </script>
