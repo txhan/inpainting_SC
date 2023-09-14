@@ -121,10 +121,11 @@
                 <span class="author-block">
                   <a href="https://scholar.google.com/citations?user=a2WEREUAAAAJ&hl=en" target="_blank">Qianqian Yang</a>
                   <span class="author-block">
-                    <a href="https://scholar.google.com/citations?user=MbmKROkAAAAJ&hl=en" target="_blank">Deniz Gunduz</a>
-                    <span class="author-block">
                       <a href="https://scholar.google.com/citations?user=7l8wsYgAAAAJ&hl=en&" target="_blank">Shi Zhiguo</a>
-                    </span>
+                      <span class="author-block">
+                        <a href="https://scholar.google.com/citations?user=MbmKROkAAAAJ&hl=en" target="_blank">Deniz Gunduz</a>
+                
+                        </span>
                   </div>
 
                   <div class="is-size-5 publication-authors">
@@ -170,10 +171,7 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
       <h2 class="subtitle has-text-centered">
-        Our main contributions are threefold: <br>
-(i) We are the first to employ inpainting for semantic communication, selecting the most important parts of an image for transmission. This maintains a good balance between image quality and communication overhead.<br>
-(ii) We use a diffusion model to reconstruct high-quality images at the receiving end. This results in superior human-perceived image quality compared to other methods.<br>
-(iii) Our system exhibits robust performance under noisy conditions and can adapt to different types of images, which will help in further improving the model and reducing bias.
+        Deep learning (DL) based semantic communication approaches have shown great advantages in efficiently transmitting images compared to traditional methods. However, most of the existing works rely heavily on proper training of the DL models, which may be costly and infeasible in some cases. In our paper, we proposed a training-free semantic communication approach for highly efficient image transmission by exploiting image inpainting techniques. In particular, we select a small subset of pixels that are semantically more important using the Iterative Inpainting approach. Then we reconstruct images accordingly at the receiver and further refine the reconstruction with a diffusion based Inpainting approach.  Our simulation results suggest that our method surpasses both Deep JSCC and our previous work in terms of the qualities of the reconstructed images. Specifically, it is shown a 3 to 5 dB improvement in PSNR by the proposed approach than our previous method.
       </h2>
     </div>
   </div>
