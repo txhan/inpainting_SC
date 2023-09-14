@@ -229,6 +229,37 @@ For low compression ratios, like 0.3%, the mask of the received pixels and some 
 </section>
 <!-- End paper abstract -->
 
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Some big picture of pixel selection results</h2>
+        <div class="content has-text-justified">
+          <p>
+            The process begins by generating a binary mask for the input image, setting 0.01% of elements to 1 randomly.
+This mask is applied to the image, and a reconstructed image is created using fast inpainting.
+An initial error map is derived from the difference between the original and reconstructed images.
+The mask is updated iteratively; each iteration finds elements away from the non-zero elements in the mask that have maximum values in the error map and sets their mask positions to 1.
+After updating the mask, the image is reconstructed again, and the error map is updated.
+The iterations continue until a maximum number is reached.
+Finally, the process outputs the final mask, selects pixels based on this mask to transmit, and normalizes these pixels to send over the channel.
+         </p>
+          <p>
+             <img src="static/images/1.png" alt="Additional Results" class="center-image blend-img-background"/>
+            <img src="static/images/1p.png" alt="Additional Results" class="center-image blend-img-background"/>
+            <img src="static/images/2.png" alt="Additional Results" class="center-image blend-img-background"/>
+            <img src="static/images/2p.png" alt="Additional Results" class="center-image blend-img-background"/>
+            <img src="static/images/3.png" alt="Additional Results" class="center-image blend-img-background"/>
+            <img src="static/images/3p.png" alt="Additional Results" class="center-image blend-img-background"/>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+                    
 <section class="section hero is-light">
   <div class="container is-full is-max-desktop">
     <div class="content ">
