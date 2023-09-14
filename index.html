@@ -183,13 +183,44 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
+        <h2 class="title is-3">System Model</h2>
         <div class="content has-text-justified">
           <p>
-This paper introduces an innovative approach to the semantic transmission of visual data over wireless networks, leveraging image inpainting to restore missing or distorted regions. At the transmitter, we utilize a novel pixel selection technique to detect and send semantically significant characteristics, increasing communication efficiency without compromising the quality of the image. At the receiver, we employ a blend of rapid inpainting methods with diffusion models (DDPM) to achieve high-definition image reconstruction. This combination results in outclassing traditional methods like Deep JSCC, particularly in terms of objective image quality and transmission efficiency. Against our previous generative method, while there is a slight decrease in data transmission, there are considerable improvements in objective evaluation metrics and a slight enhancement in the subjective ones. Notably, our approach obviates the need for predefined semantic segmentation models through the incorporation of traditional inpainting methods, thereby offering exceptional versatility across a wide array of applications. Moreover, the system exhibits robust performance even under high-noise environments. 
-          </p>
+            The system model for semantic communication for image transmission is presented.
+The process involves:
+Inputting the original image into the Iteration Inpainting and Pixel Selection module.
+Selected pixels are mapped into channel symbols with a power normalization layer.
+Signals are transmitted over an Additive White Gaussian Noise (AWGN) channel.
+At the receiver:
+The received signal is converted back into selected pixels with a denormalization layer.
+The Fast Inpainting module creates a coarse reconstructed image.
+The Coarse-to-Fine Pixel Fusion module combines the recovered pixels with the coarse image to get a fused feature.
+The DDPM module refines the reconstructed image.
+         </p>
           <p>
              <img src="static/images/aresults.png" alt="Additional Results" class="center-image blend-img-background"/>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Some example without coarse to fine fusion</h2>
+        <div class="content has-text-justified">
+          <p>
+            The Coarse-to-Fine Pixel Fusion module combines the received pixels with the coarse image and inputs it to the DDPM Inpainting module.
+For low compression ratios, like 0.3%, the mask of the received pixels and some additional elements are also input into the DDPM module.
+         </p>
+          <p>
+             <img src="static/images/fail.png" alt="Additional Results" class="center-image blend-img-background"/>
           </p>
         </div>
       </div>
